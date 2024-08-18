@@ -10,12 +10,12 @@ import { Component } from 'solid-js';
  * It allows users to select a date and navigate between pages of dates.
  *
  * @component
- * @param {NavigationBarProps} props - The props for the NavigationBar component.
+ * @param {NavigationBarProps} props - The properties for the NavigationBar component.
  * @param {number} props.page - The current page number of the navigation.
  * @param {number} props.navigationPage - The page number used for rendering the days.
  * @param {GeneratedDays[]} props.daysGeneratedAhead - The array of generated days to display in the navigation.
- * @param {(page: number) => void} props.setNavigationPage - Function to update the current page number.
- * @param {(date: string) => void} props.setSelectedDate - Function to update the selected date.
+ * @param {Function} props.setNavigationPage - Function to update the current page number.
+ * @param {Function} props.setSelectedDate - Function to update the selected date.
  * @param {number} props.totalPages - The total number of pages available.
  *
  * @returns {JSX.Element} The rendered navigation bar component.

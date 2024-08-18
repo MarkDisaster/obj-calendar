@@ -1,6 +1,5 @@
 import { Component, createMemo, createSignal } from 'solid-js';
 import TimeList from '@/components/TimeList';
-
 import mockData from '../../mockData.json';
 import { findByDate } from '@/helpers/getDataByDate';
 import { getUpdatedData } from '@/helpers/getUpdatedData';
@@ -10,9 +9,22 @@ import NavigationBar from '@/components/Navigation';
 import { generateDaysAheadFromNow } from '@/helpers/getGeneratedDaysAhedFromNow';
 import { TIMESLOT } from '@/helpers/getUpdatedData/interfaces';
 
+/**
+ * Calendar Component
+ *
+ * This component represents a calendar interface that allows users to select a date
+ * and time slot. It provides functionality for navigating between different dates and
+ * viewing available time slots for the selected date.
+ *
+ * @component
+ *
+ * @returns {JSX.Element} The rendered Calendar component.
+ */
 const Calendar: Component = () => {
+   // Get today's date in ISO format
    const getTodayDateISO = new Date().toISOString().split('T')[0];
 
+   // Signals for managing state
    const [calendarData, setCalendarData] = createSignal(
       getReplicatedData(mockData.Data, 7),
    );
@@ -23,6 +35,12 @@ const Calendar: Component = () => {
 
    console.log('calendarData', calendarData());
 
+   /**
+    * Handles the selection of a time slot and updates the calendar data accordingly.
+    *
+    * @param {string} date - The selected date.
+    * @param {TIMESLOT} timeSlotActive - The active time slot that was selected.
+    */
    const handleUpdateDataAndSelectTime = (
       date: string,
       timeSlotActive: TIMESLOT,
@@ -39,7 +57,7 @@ const Calendar: Component = () => {
       setSelectedTime(selectedTime() !== date ? date : '');
    };
 
-   // Memo, které reaguje na změny selectedDate a calendarData
+   // Memoized calculation for the current calendar data based on selectedDate and calendarData
    const currentCalendarData = createMemo(() => {
       const dataByDate = findByDate(selectedDate(), calendarData());
       const dataByTime = getDatabyTime(dataByDate);
