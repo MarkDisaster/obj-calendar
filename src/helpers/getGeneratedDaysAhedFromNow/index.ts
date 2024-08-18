@@ -1,8 +1,11 @@
 import { getDayShortName } from '@/helpers/getDayShortName';
+import { GeneratedDays } from '@/helpers/getGeneratedDaysAhedFromNow/interfaces';
 import { getIsToday } from '@/helpers/getIsToday';
 import { getIsTomorrow } from '@/helpers/getIsTommorow';
 
-export const generateDaysAheadFromNow = (daysAhead: number): any[] => {
+export const generateDaysAheadFromNow = (
+   daysAhead: number,
+): GeneratedDays[] => {
    const now = new Date();
    const days = [];
    for (let i = 0; i < daysAhead; i++) {
@@ -29,5 +32,6 @@ export const generateDaysAheadFromNow = (daysAhead: number): any[] => {
          formattedDate: formattedDateText,
       });
    }
+   console.log('days', days);
    return days;
 };

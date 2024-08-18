@@ -1,10 +1,12 @@
-import { createSignal } from 'solid-js';
+import Calendar from '@/components/Calendar';
 import './App.css';
 
 function App() {
-   const [count] = createSignal(47);
-
-   return <>Hello Vite {count()}</>;
+   return (
+      <>
+         <Calendar />
+      </>
+   );
 }
 
 export default App;

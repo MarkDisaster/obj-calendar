@@ -22,6 +22,8 @@ export interface ButtonProps {
     * Optional click handler
     */
    onClick?: () => void;
+
+   disabled?: boolean;
 }
 
 /**
@@ -38,6 +40,7 @@ export const Button: Component<ButtonProps> = (props) => {
 
    return (
       <button
+         disabled={false}
          {...rest}
          type="button"
          classList={{
