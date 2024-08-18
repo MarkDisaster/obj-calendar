@@ -27,9 +27,7 @@ const TimeList: Component<TimeListProps> = (timeListData) => {
                   OriginalCapacity={timeData.OriginalCapacity}
                   Time={timeData.Time}
                   activeTime={timeListData.activeTime}
-                  onSelectTime={() => {
-                     timeData.Capacity > 0 && timeListData.onSelectTime;
-                  }}
+                  onSelectTime={timeListData.onSelectTime}
                />
             );
          })}

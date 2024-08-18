@@ -1,4 +1,4 @@
-import { Component } from 'solid-js';
+import { Component, createMemo } from 'solid-js';
 import {
    TIMESLOT,
    TimeSlotProps,
@@ -7,19 +7,24 @@ import {
 import styles from './style.module.css';
 
 export const TimeSlot: Component<TimeSlotProps> = (timeListData) => {
-   const capacityChange =
+   const capacityChange = createMemo(() =>
       timeListData.DateISO === timeListData.activeTime
          ? TIMESLOT.ACTIVE
-         : TIMESLOT.INACTIVE;
+         : TIMESLOT.INACTIVE,
+   );
+
    return (
       //{`time-slot ${timeListData.DateISO === timeListData.activeTime ? 'full' : ''}`}
       <div
          class={styles.timeSlot}
          onClick={() => {
-            timeListData.Capacity > 0 &&
-               timeListData.onSelectTime(timeListData.DateISO, capacityChange);
+            timeListData.Capacity > 0 && console.log('ahoj');
+            timeListData.onSelectTime(timeListData.DateISO, capacityChange());
          }}
       >
+         {timeListData.DateISO}
+         {timeListData.activeTime}
+         {capacityChange()}
          <div>
             {timeListData.Capacity}/{timeListData.OriginalCapacity}
          </div>

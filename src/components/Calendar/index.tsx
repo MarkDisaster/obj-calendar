@@ -22,7 +22,7 @@ import { TIMESLOT } from '@/helpers/getUpdatedData/interfaces';
  */
 const Calendar: Component = () => {
    // Get today's date in ISO format
-   const getTodayDateISO = new Date().toISOString().split('T')[0];
+   const getTodayDateISO = new Date().toLocaleDateString('sv-SE');
 
    // Signals for managing state
    const [calendarData, setCalendarData] = createSignal(
