@@ -1,10 +1,10 @@
-import { Data, TIMESLOT } from '@/helpers/getUpdatedData/interfaces';
+import { Data } from '@/helpers/getUpdatedData/interfaces';
 
 export const getUpdatedData = (
    dateISO: string,
    prevSelectedDate: string,
    data: Data[],
-   timeslotActive: TIMESLOT,
+   timeslotActive: boolean,
 ): Data[] => {
    const updatedDataArray = data.map((dataItem) => {
       const updatedDataItems = dataItem.data.map((item) => {
@@ -25,7 +25,7 @@ export const getUpdatedData = (
          } else if (
             item.DateISO === prevSelectedDate &&
             item.DateISO === dateISO &&
-            timeslotActive === TIMESLOT.ACTIVE
+            timeslotActive === true
          ) {
             return {
                ...item,

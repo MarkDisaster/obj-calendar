@@ -9,8 +9,3 @@ export interface Data {
    date: string;
    data: MockData[];
 }
-
-export enum TIMESLOT {
-   ACTIVE = 'active',
-   INACTIVE = 'inactive',
-}

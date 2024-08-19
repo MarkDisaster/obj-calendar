@@ -7,10 +7,5 @@ export interface TimeListProps {
    }>;
    date: string;
    activeTime: string;
-   onSelectTime: (time: string, timeslotActive: TIMESLOT) => void;
-}
-
-export enum TIMESLOT {
-   ACTIVE = 'active',
-   INACTIVE = 'inactive',
+   onSelectTime: (time: string, timeslotActive: boolean) => void;
 }

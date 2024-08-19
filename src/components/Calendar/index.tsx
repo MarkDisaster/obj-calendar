@@ -7,7 +7,6 @@ import { getDatabyTime } from '@/helpers/getDataByTime';
 import { getReplicatedData } from '@/helpers/getReplicatedData';
 import NavigationBar from '@/components/Navigation';
 import { generateDaysAheadFromNow } from '@/helpers/getGeneratedDaysAhedFromNow';
-import { TIMESLOT } from '@/helpers/getUpdatedData/interfaces';
 
 /**
  * Calendar Component
@@ -39,11 +38,10 @@ const Calendar: Component = () => {
     * Handles the selection of a time slot and updates the calendar data accordingly.
     *
     * @param {string} date - The selected date.
-    * @param {TIMESLOT} timeSlotActive - The active time slot that was selected.
     */
    const handleUpdateDataAndSelectTime = (
       date: string,
-      timeSlotActive: TIMESLOT,
+      timeSlotActive: boolean,
    ) => {
       setCalendarData(
          getUpdatedData(date, selectedTime(), calendarData(), timeSlotActive),

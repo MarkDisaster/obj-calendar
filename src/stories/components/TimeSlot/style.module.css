@@ -1,3 +1,35 @@
 .timeSlot {
-   color:chocolate
+   position: relative;
+   flex-grow: 0;
+   flex-shrink: 0;
+   flex-basis: 30%;
+   border: 1px solid #ffffff;
+   border-radius: .5rem;
+}
+
+.timeSlot:hover {
+   border-color: #86bb37;
+}
+
+.timeSlotFull {
+   text-decoration: line-through;
+}
+
+.timeSlotActive {
+   background-color: #86bb37;
+}
+
+.timeSlot:hover {
+   cursor: pointer;
+}
+
+.capacity {
+   position: absolute;
+   top: 0;
+   padding: 0.313rem;
+   font-size: 0.75rem;
+}
+
+.time {
+   padding: 0.625rem;
 }

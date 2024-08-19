@@ -1,6 +1,8 @@
 import { TimeListProps } from '@/components/TimeList/interfaces';
 import { TimeSlot } from '@/stories/components/TimeSlot';
-import { Component } from 'solid-js';
+import { Component, createMemo } from 'solid-js';
+
+import styles from './style.module.css';
 
 /**
  * TimeList Component
@@ -18,8 +20,13 @@ import { Component } from 'solid-js';
  */
 const TimeList: Component<TimeListProps> = (timeListData) => {
    return (
-      <div>
+      <div class={styles.timeList}>
          {timeListData.data?.map((timeData) => {
+            const isTimeSlotActive = createMemo(() =>
+               timeData.DateISO === timeListData.activeTime ? true : false,
+            );
+            const handleOnSelectTime = () =>
+               timeListData.onSelectTime(timeData.DateISO, isTimeSlotActive());
             return (
                <TimeSlot
                   DateISO={timeData.DateISO}
@@ -27,7 +34,8 @@ const TimeList: Component<TimeListProps> = (timeListData) => {
                   OriginalCapacity={timeData.OriginalCapacity}
                   Time={timeData.Time}
                   activeTime={timeListData.activeTime}
-                  onSelectTime={timeListData.onSelectTime}
+                  onSelectTime={handleOnSelectTime}
+                  isActive={isTimeSlotActive()}
                />
             );
          })}

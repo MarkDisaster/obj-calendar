@@ -3,6 +3,8 @@ import { getPage } from '@/helpers/getPage';
 import { Button } from '@/stories/components/Button';
 import { Component } from 'solid-js';
 
+import styles from './style.module.css';
+
 /**
  * NavigationBar Component
  *
@@ -45,13 +47,13 @@ const NavigationBar: Component<NavigationBarProps> = (props) => {
    };
 
    return (
-      <div>
+      <div class={styles.navigation}>
          <Button
             onClick={() => props.setNavigationPage(props.page - 1)}
             label="<"
             disabled={props.navigationPage <= 1}
          />
-         <span>{renderDays()}</span>
+         {renderDays()}
          <Button
             onClick={() => props.setNavigationPage(props.page + 1)}
             label=">"
