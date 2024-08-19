@@ -72,6 +72,7 @@ const Calendar: Component = () => {
                setSelectedDate={setSelectedDate}
                navigationPage={navigationPage()}
                daysGeneratedAhead={daysGeneratedAhead()}
+               selectedDate={selectedDate()}
             />
          </div>
          <TimeList

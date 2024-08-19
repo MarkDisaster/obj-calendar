@@ -41,6 +41,9 @@ const NavigationBar: Component<NavigationBarProps> = (props) => {
             <Button
                onClick={() => props.setSelectedDate(day.date)}
                label={day.formattedDate}
+               backgroundColor={
+                  props.selectedDate === day.date ? '#d3a245' : ''
+               }
             />
          );
       });
