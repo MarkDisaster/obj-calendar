@@ -27,6 +27,7 @@ const TimeList: Component<TimeListProps> = (timeListData) => {
             );
             const handleOnSelectTime = () =>
                timeListData.onSelectTime(timeData.DateISO, isTimeSlotActive());
+
             return (
                <TimeSlot
                   DateISO={timeData.DateISO}

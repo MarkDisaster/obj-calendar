@@ -1,0 +1,11 @@
+.popover {
+   position: absolute;
+   border: 1px solid #ff0000;
+   padding: 1rem 2rem;
+   background-color: #dd5858;
+   border-radius: .5rem;
+   box-shadow: 1px 5px 5px rgb(0 0 0 / 50%);
+   left: 50%;
+   transform: translate(-50%, -110%);
+   min-width: 300px;
+}

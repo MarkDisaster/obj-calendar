@@ -19,7 +19,7 @@
       },
       {
          "Time": "03:00",
-         "Capacity": 2,
+         "Capacity": 0,
          "OriginalCapacity": 2
       },
       {
@@ -34,7 +34,7 @@
       },
       {
          "Time": "06:00",
-         "Capacity": 2,
+         "Capacity": 0,
          "OriginalCapacity": 2
       },
       {
@@ -79,7 +79,7 @@
       },
       {
          "Time": "15:00",
-         "Capacity": 2,
+         "Capacity": 0,
          "OriginalCapacity": 2
       },
       {
@@ -109,7 +109,7 @@
       },
       {
          "Time": "21:00",
-         "Capacity": 2,
+         "Capacity": 0,
          "OriginalCapacity": 2
       },
       {

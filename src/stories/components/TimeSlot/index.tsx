@@ -1,13 +1,25 @@
-import { Component } from 'solid-js';
+import { Component, createSignal, onCleanup } from 'solid-js';
 import { TimeSlotProps } from '@/stories/components/TimeSlot/interfaces';
 
 import styles from './style.module.css';
+import Popover from '@/stories/components/Popover';
 
 export const TimeSlot: Component<TimeSlotProps> = (timeListData) => {
+   const [isPopoverVisible, setIsPopoverVisible] = createSignal(false);
+
    return (
       <div
          onClick={() => {
             timeListData.Capacity > 0 && timeListData.onSelectTime();
+            if (timeListData.Capacity === 0) {
+               setIsPopoverVisible(true);
+
+               const timeout = setTimeout(() => {
+                  setIsPopoverVisible(false);
+               }, 2000);
+
+               onCleanup(() => clearTimeout(timeout));
+            }
          }}
          classList={{
             [styles.timeSlot]: true,
@@ -15,6 +27,10 @@ export const TimeSlot: Component<TimeSlotProps> = (timeListData) => {
             [styles.timeSlotFull]: timeListData.Capacity === 0,
          }}
       >
+         <Popover
+            isVisible={isPopoverVisible()}
+            text="Kapacita zaplněna, zvolte jiný termín"
+         />
          <div class={styles.capacity}>
             {timeListData.Capacity}/{timeListData.OriginalCapacity}
          </div>
