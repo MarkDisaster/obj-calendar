@@ -3,6 +3,17 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  
+}
+
+* {
+  background-color: #1a2439;
+  color: #ffffff;
+}
+
+button {
+  background-color: unset;
+  color: #ffffff;
 }
 
 .logo {

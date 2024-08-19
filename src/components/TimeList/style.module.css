@@ -5,3 +5,10 @@
     min-width: 350px;
     max-width: 450px;
 }
+
+@media (max-width: 768px) {
+    .timeList {
+        min-width: unset;
+        width: 100%;
+    }
+}

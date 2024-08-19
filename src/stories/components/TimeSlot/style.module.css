@@ -2,9 +2,10 @@
    position: relative;
    flex-grow: 0;
    flex-shrink: 0;
-   flex-basis: 31.3%;
+   flex-basis: 31%;
    border: 1px solid #ffffff;
    border-radius: .5rem;
+   overflow: hidden;
 }
 
 .timeSlot:hover {
@@ -26,8 +27,14 @@
 .capacity {
    position: absolute;
    top: 0;
-   padding: 0.313rem;
+   padding: 0 0 0.313rem 0.313rem;
    font-size: 0.75rem;
+}
+
+@media (max-width: 768px) {
+   .capacity {
+      font-size: 0.75rem;
+   }
 }
 
 .time {
