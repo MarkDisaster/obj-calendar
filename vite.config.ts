@@ -4,4 +4,7 @@ import viteTsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
    plugins: [solid(), viteTsconfigPaths()],
+   build: {
+      cssCodeSplit: false,
+   },
 });
