@@ -6,8 +6,12 @@
   
 }
 
-* {
+body {
   background-color: #1a2439;
+  color: #ffffff;
+}
+
+* {
   color: #ffffff;
 }
 
