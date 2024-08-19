@@ -8,4 +8,14 @@
    left: 50%;
    transform: translate(-50%, -110%);
    min-width: 300px;
+   z-index: 9;
+}
+
+@media (max-width: 768px) {
+   .popover {
+      position: fixed;
+      left: 50%;
+      transform: translateX(-50%)
+      
+   }
 }

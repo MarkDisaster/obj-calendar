@@ -32,8 +32,6 @@ const Calendar: Component = () => {
    const [selectedDate, setSelectedDate] = createSignal(getTodayDateISO);
    const [selectedTime, setSelectedTime] = createSignal('');
 
-   console.log('calendarData', calendarData());
-
    /**
     * Handles the selection of a time slot and updates the calendar data accordingly.
     *
@@ -46,12 +44,7 @@ const Calendar: Component = () => {
       setCalendarData(
          getUpdatedData(date, selectedTime(), calendarData(), timeSlotActive),
       );
-      console.log(
-         'tady',
-         selectedTime(),
-         date,
-         getUpdatedData(date, selectedTime(), calendarData(), timeSlotActive),
-      );
+
       setSelectedTime(selectedTime() !== date ? date : '');
    };
 
@@ -59,7 +52,7 @@ const Calendar: Component = () => {
    const currentCalendarData = createMemo(() => {
       const dataByDate = findByDate(selectedDate(), calendarData());
       const dataByTime = getDatabyTime(dataByDate);
-      console.log('currentCalendarData', dataByTime); // Debugging line
+
       return dataByTime;
    });
 

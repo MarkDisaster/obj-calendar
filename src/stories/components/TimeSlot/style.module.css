@@ -5,7 +5,6 @@
    flex-basis: 31%;
    border: 1px solid #ffffff;
    border-radius: .5rem;
-   overflow: hidden;
 }
 
 .timeSlot:hover {
@@ -29,6 +28,7 @@
    top: 0;
    padding: 0 0 0.313rem 0.313rem;
    font-size: 0.75rem;
+   border-radius: .5rem;
 }
 
 @media (max-width: 768px) {
@@ -39,4 +39,5 @@
 
 .time {
    padding: 0.625rem;
+   border-radius: .5rem;
 }

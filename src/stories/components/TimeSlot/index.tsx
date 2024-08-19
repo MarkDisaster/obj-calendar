@@ -18,7 +18,7 @@ export const TimeSlot: Component<TimeSlotProps> = (timeListData) => {
                   setIsPopoverVisible(false);
                }, 2000);
 
-               onCleanup(() => clearTimeout(timeout));
+               return () => clearTimeout(timeout);
             }
          }}
          classList={{

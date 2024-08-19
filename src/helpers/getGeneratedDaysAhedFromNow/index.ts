@@ -32,6 +32,6 @@ export const generateDaysAheadFromNow = (
          formattedDate: formattedDateText,
       });
    }
-   console.log('days', days);
+
    return days;
 };
