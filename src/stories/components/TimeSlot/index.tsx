@@ -1,4 +1,4 @@
-import { Component, createSignal, onCleanup } from 'solid-js';
+import { Component, createSignal } from 'solid-js';
 import { TimeSlotProps } from '@/stories/components/TimeSlot/interfaces';
 
 import styles from './style.module.css';
