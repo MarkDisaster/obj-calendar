@@ -5,13 +5,17 @@
  */
 export interface TimeListProps {
    /**
+    * Represents a time slot.
+    * @typedef {Object} TimeSlot
+    * @property {string} Time - The time of the slot in 'HH:mm' format (e.g., '14:30').
+    * @property {number} Capacity - The current available capacity for this time slot.
+    * @property {number} OriginalCapacity - The original capacity of the time slot before any adjustments.
+    * @property {string} DateISO - The date in ISO format (e.g., '2024-08-20T23:00').
+    */
+
+   /**
     * An array of time slot objects, each representing a specific time slot with its details.
-    * @type {Array<{
-    *   Time: string; // The time of the slot in 'HH:mm' format (e.g., '14:30').
-    *   Capacity: number; // The current available capacity for this time slot.
-    *   OriginalCapacity: number; // The original capacity of the time slot before any adjustments.
-    *   DateISO: string; // The date in format (e.g., '2024-08-20T23:00').
-    * }>}
+    * @type {Array<TimeSlot>}
     */
    data: Array<{
       Time: string;

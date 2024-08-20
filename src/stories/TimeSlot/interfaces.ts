@@ -34,7 +34,7 @@ export interface TimeSlotProps {
 
    /**
     * Function called when the time slot is selected.
-    * @type {() => void}
+    * @type {Function}
     */
    onSelectTime: () => void;
 
