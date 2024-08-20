@@ -20,10 +20,8 @@ import { generateDaysAheadFromNow } from '@/helpers/getGeneratedDaysAhedFromNow'
  * @returns {JSX.Element} The rendered Calendar component.
  */
 const Calendar: Component = () => {
-   // Get today's date in ISO format
    const getTodayDateISO = new Date().toLocaleDateString('sv-SE');
 
-   // Signals for managing state
    const [calendarData, setCalendarData] = createSignal(
       getReplicatedData(mockData.Data, 7),
    );
@@ -37,6 +35,7 @@ const Calendar: Component = () => {
     *
     * @param {string} date - The selected date.
     */
+
    const handleUpdateDataAndSelectTime = (
       date: string,
       timeSlotActive: boolean,
@@ -48,7 +47,6 @@ const Calendar: Component = () => {
       setSelectedTime(selectedTime() !== date ? date : '');
    };
 
-   // Memoized calculation for the current calendar data based on selectedDate and calendarData
    const currentCalendarData = createMemo(() => {
       const dataByDate = findByDate(selectedDate(), calendarData());
       const dataByTime = getDatabyTime(dataByDate);

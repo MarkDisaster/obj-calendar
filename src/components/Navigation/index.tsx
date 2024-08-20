@@ -4,50 +4,46 @@ import { Button } from '@/stories/components/Button';
 import { Component } from 'solid-js';
 
 import styles from './style.module.css';
+import { useRenderDays } from '@/hooks/useRenderDays';
 
 /**
- * NavigationBar Component
+ * A navigation bar component for paginating and displaying days.
  *
- * This component provides a navigation bar to paginate through a list of generated days.
- * It allows users to select a date and navigate between pages of dates.
+ * This component provides navigation controls to paginate through an array of `GeneratedDays` objects.
+ * It uses the `getPage` function to retrieve the days for the current page and `useRenderDays` to render them.
  *
- * @component
- * @param {NavigationBarProps} props - The properties for the NavigationBar component.
- * @param {number} props.page - The current page number of the navigation.
- * @param {number} props.navigationPage - The page number used for rendering the days.
- * @param {GeneratedDays[]} props.daysGeneratedAhead - The array of generated days to display in the navigation.
- * @param {Function} props.setNavigationPage - Function to update the current page number.
- * @param {Function} props.setSelectedDate - Function to update the selected date.
- * @param {number} props.totalPages - The total number of pages available.
+ * @param {NavigationBarProps} props - The properties for the navigation bar component.
+ * @param {number} props.page - The total number of pages available (used to handle button states).
+ * @param {Setter<number>} props.setNavigationPage - Function to update the current page number.
+ * @param {string} props.selectedDate - The currently selected date.
+ * @param {Setter<string>} props.setSelectedDate - Function to update the selected date.
+ * @param {number} props.navigationPage - The current page number for navigation.
+ * @param {GeneratedDays[]} props.daysGeneratedAhead - An array of `GeneratedDays` objects to paginate.
  *
  * @returns {JSX.Element} The rendered navigation bar component.
+ *
+ * @example
+ * <NavigationBar
+ *   page={5}
+ *   setNavigationPage={(page) => console.log('New page:', page)}
+ *   selectedDate="2024-01-01"
+ *   setSelectedDate={(date) => console.log('Selected date:', date)}
+ *   navigationPage={1}
+ *   daysGeneratedAhead={[
+ *   { date: '2024-01-01', formattedDate: 'Dnes 20.8.' },
+ *   { date: '2024-01-02', formattedDate: 'Zítra 21.8.' },
+ *   { date: '2024-01-03', formattedDate: 'čt 22.8.' },
+ *   // ... more GeneratedDays items
+ * ]}
+ * />
  */
-const NavigationBar: Component<NavigationBarProps> = (props) => {
-   /**
-    * Renders a list of days for the current page.
-    *
-    * @function
-    * @returns {JSX.Element[]} The list of day buttons for the current page.
-    */
-   const renderDays = () => {
-      const paginatedDays = getPage(
-         props.daysGeneratedAhead,
-         props.navigationPage,
-         2,
-      );
 
-      return paginatedDays.map((day) => {
-         return (
-            <Button
-               onClick={() => props.setSelectedDate(day.date)}
-               label={day.formattedDate}
-               backgroundColor={
-                  props.selectedDate === day.date ? '#d3a245' : ''
-               }
-            />
-         );
-      });
-   };
+const NavigationBar: Component<NavigationBarProps> = (props) => {
+   const paginatedDays = () =>
+      getPage(props.daysGeneratedAhead, props.navigationPage, 2);
+
+   const renderDays = () =>
+      useRenderDays(paginatedDays(), props.setSelectedDate, props.selectedDate);
 
    return (
       <div class={styles.navigation}>

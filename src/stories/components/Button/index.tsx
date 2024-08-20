@@ -1,34 +1,15 @@
 import { Component, mergeProps, splitProps } from 'solid-js';
 import './button.css';
-
-export interface ButtonProps {
-   /**
-    * Is this the principal call to action on the page?
-    */
-   primary?: boolean;
-   /**
-    * What background color to use
-    */
-   backgroundColor?: string;
-   /**
-    * How large should the button be?
-    */
-   size?: 'small' | 'medium' | 'large';
-   /**
-    * Button contents
-    */
-   label: string;
-   /**
-    * Optional click handler
-    */
-   onClick?: () => void;
-
-   disabled?: boolean;
-}
+import { ButtonProps } from '@/stories/components/Button/interfaces';
 
 /**
  * Primary UI component for user interaction
+ *
+ * @component
+ * @param {ButtonProps} props - The props for the Button component.
+ * @returns {JSX.Element} A JSX element representing the button.
  */
+
 export const Button: Component<ButtonProps> = (props) => {
    props = mergeProps({ size: 'small' as ButtonProps['size'] }, props);
    const [local, rest] = splitProps(props, [
