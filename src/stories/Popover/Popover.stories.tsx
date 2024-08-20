@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-solidjs';
-import { Popover } from '@/stories/components/Popover';
+import { Popover } from '@/stories/Popover';
 
 const meta: Meta<typeof Popover> = {
    title: 'Components/Popover',

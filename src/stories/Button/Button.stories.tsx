@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from 'storybook-solidjs';
 import { Button } from '.';
 
 const meta = {
-   title: 'Example/Button',
+   title: 'Components/Button',
    component: Button,
    tags: ['autodocs'],
    argTypes: {

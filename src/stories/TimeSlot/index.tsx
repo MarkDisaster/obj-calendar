@@ -1,6 +1,6 @@
 import { Component, createSignal } from 'solid-js';
-import { TimeSlotProps } from '@/stories/components/TimeSlot/interfaces';
-import Popover from '@/stories/components/Popover';
+import { TimeSlotProps } from '@/stories/TimeSlot/interfaces';
+import Popover from '@/stories/Popover';
 
 import styles from './style.module.css';
 

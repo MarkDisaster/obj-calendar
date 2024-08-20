@@ -1,6 +1,6 @@
 import { Component, mergeProps, splitProps } from 'solid-js';
 import './button.css';
-import { ButtonProps } from '@/stories/components/Button/interfaces';
+import { ButtonProps } from '@/stories/Button/interfaces';
 
 /**
  * Primary UI component for user interaction

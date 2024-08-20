@@ -1,4 +1,4 @@
-import { PopoverProps } from '@/stories/components/Popover/interfaces';
+import { PopoverProps } from '@/stories/Popover/interfaces';
 import { Component } from 'solid-js';
 
 import styles from './style.module.css';

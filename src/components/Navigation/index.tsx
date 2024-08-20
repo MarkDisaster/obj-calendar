@@ -1,6 +1,6 @@
 import { NavigationBarProps } from '@/components/Navigation/interfaces';
 import { getPage } from '@/helpers/getPage';
-import { Button } from '@/stories/components/Button';
+import { Button } from '@/stories/Button';
 import { Component } from 'solid-js';
 
 import styles from './style.module.css';

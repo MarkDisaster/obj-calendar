@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from 'storybook-solidjs';
-import { TimeSlot } from '@/stories/components/TimeSlot';
-import { TimeSlotProps } from '@/stories/components/TimeSlot/interfaces';
+import { TimeSlot } from '@/stories/TimeSlot';
+import { TimeSlotProps } from '@/stories/TimeSlot/interfaces';
 
 const meta: Meta<typeof TimeSlot> = {
    title: 'Components/TimeSlot',

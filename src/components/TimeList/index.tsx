@@ -1,5 +1,5 @@
 import { TimeListProps } from '@/components/TimeList/interfaces';
-import { TimeSlot } from '@/stories/components/TimeSlot';
+import { TimeSlot } from '@/stories/TimeSlot';
 import { Component, createMemo } from 'solid-js';
 
 import styles from './style.module.css';

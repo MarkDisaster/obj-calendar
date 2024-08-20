@@ -1,5 +1,5 @@
 import { GeneratedDays } from '@/hooks/useRenderDays/interfaces';
-import { Button } from '@/stories/components/Button';
+import { Button } from '@/stories/Button';
 import { Setter } from 'solid-js';
 
 /**
