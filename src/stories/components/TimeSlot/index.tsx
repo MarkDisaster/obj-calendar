@@ -10,8 +10,9 @@ export const TimeSlot: Component<TimeSlotProps> = (timeListData) => {
    return (
       <div
          onClick={() => {
-            timeListData.Capacity > 0 && timeListData.onSelectTime();
-            if (timeListData.Capacity === 0) {
+            (timeListData.Capacity > 0 || timeListData.isActive) &&
+               timeListData.onSelectTime();
+            if (timeListData.Capacity === 0 && !timeListData.isActive) {
                setIsPopoverVisible(true);
 
                const timeout = setTimeout(() => {
@@ -24,7 +25,8 @@ export const TimeSlot: Component<TimeSlotProps> = (timeListData) => {
          classList={{
             [styles.timeSlot]: true,
             [styles.timeSlotActive]: timeListData.isActive,
-            [styles.timeSlotFull]: timeListData.Capacity === 0,
+            [styles.timeSlotFull]:
+               timeListData.Capacity === 0 && !timeListData.isActive,
          }}
       >
          <Popover
